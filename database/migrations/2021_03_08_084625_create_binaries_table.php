@@ -16,9 +16,9 @@ class CreateBinariesTable extends Migration
     Schema::create('binaries', function (Blueprint $table) {
       $table->uuid("id")->primary();
       $table->unsignedBigInteger("sponsor");
-      $table->foreign('user_id')->references('id')->on('users');
+      $table->foreign('sponsor')->references('id')->on('users');
       $table->unsignedBigInteger("down_line");
-      $table->foreign('user_id')->references('id')->on('users');
+      $table->foreign('down_line')->references('id')->on('users');
       $table->timestamps();
     });
   }
