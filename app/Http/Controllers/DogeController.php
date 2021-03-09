@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class DogeController extends Controller
 {
-    //
+    public function index()
+    {
+        //
+    }
 }

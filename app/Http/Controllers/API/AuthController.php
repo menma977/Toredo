@@ -6,10 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Binary;
 use App\Models\Doge;
 use App\Models\User;
+use App\Notifications\PasswordReset;
+use App\Notifications\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Notification;
 
 class AuthController extends Controller
 {
@@ -73,6 +76,8 @@ class AuthController extends Controller
             $description = "your account creation is successful. with username: " . $user->username .
                 ". Please login and complete your account activation";
 
+            Notification::send($user, new Registered($user));
+
             return response()->json([
                 'message' => 'Registration Success',
                 'user' => $description
@@ -124,5 +129,30 @@ class AuthController extends Controller
         return response()->json([
             'message' => 'Invalid username or password'
         ], 400);
+    }
+
+    public function forgotPassword(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|string|email|exists:user,email'
+        ]);
+
+        $user = User::where('email', $request->input('email'))->first();
+        Notification::send($user, new PasswordReset($user));
+
+        return response()->json(['message' => 'passwords are sent via email and phone. make sure your email and phone are active'], 200);
+    }
+
+    public function logout()
+    {
+        $token = Auth::user()->tokens;
+
+        foreach ($token as $key => $value) {
+            $value->delete();
+        }
+
+        return response()->json([
+            'response' => 'Successfully logged out',
+        ], 200);
     }
 }
