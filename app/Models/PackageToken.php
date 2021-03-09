@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class PackageToken extends Model
 {
-  use HasFactory;
+    use HasFactory;
 
-  protected $fillable = [
-    'token',
-    'price',
-  ];
+    protected $fillable = [
+        'token',
+        'price',
+    ];
 
-  protected $hidden = [
-    'id',
-  ];
+    protected $hidden = [
+        'id',
+    ];
 }

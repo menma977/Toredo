@@ -8,18 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Level extends Model
 {
-  use HasFactory, UuidProvider;
+    use HasFactory, UuidProvider;
 
-  protected $keyType = "string";
+    protected $keyType = "string";
 
-  protected $fillable = [
-    'name',
-    'type',
-    'socket',
-    'share',
-  ];
+    protected $fillable = [
+        'name',
+        'type',
+        'socket',
+        'share',
+    ];
 
-  protected $hidden = [
-    'id',
-  ];
+    protected $hidden = [
+        'id',
+    ];
 }
