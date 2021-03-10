@@ -8,17 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Upgrade extends Model
 {
-  use HasFactory, UuidProvider;
+    use HasFactory, UuidProvider;
 
-  protected $keyType = "string";
+    protected $keyType = "string";
 
-  protected $fillable = [
-    'debit',
-    'credit',
-  ];
+    protected $fillable = [
+        'debit',
+        'credit',
+    ];
 
-  protected $hidden = [
-    'id',
-    'user_id',
-  ];
+    protected $hidden = [
+        'id',
+        'user_id',
+    ];
 }

@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dice extends Model
 {
-  use HasFactory;
+    use HasFactory;
 
-  protected $fillable = [
-    'user_id',
-  ];
+    protected $fillable = [
+        'user_id',
+    ];
 }

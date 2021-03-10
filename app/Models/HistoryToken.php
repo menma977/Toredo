@@ -8,17 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class HistoryToken extends Model
 {
-  use HasFactory, UuidProvider;
+    use HasFactory, UuidProvider;
 
-  protected $keyType = "string";
+    protected $keyType = "string";
 
-  protected $fillable = [
-    'description',
-    'value',
-  ];
+    protected $fillable = [
+        'description',
+        'value',
+    ];
 
-  protected $hidden = [
-    'id',
-    'user_id',
-  ];
+    protected $hidden = [
+        'id',
+        'user_id',
+    ];
 }

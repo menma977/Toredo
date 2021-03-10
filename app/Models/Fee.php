@@ -7,17 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Fee extends Model
 {
-  use HasFactory;
+    use HasFactory;
 
-  protected $fillable = [
-    'username',
-    'wallet',
-    'cookie',
-  ];
+    protected $fillable = [
+        'username',
+        'wallet',
+        'cookie',
+    ];
 
-  protected $hidden = [
-    'id',
-    'user_id',
-    'password',
-  ];
+    protected $hidden = [
+        'id',
+        'user_id',
+        'password',
+    ];
 }

@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Binary extends Model
 {
-  use HasFactory;
+    use HasFactory;
 
-  protected $fillable = [
-    'sponsor',
-    'down_line',
-  ];
+    protected $fillable = [
+        'sponsor',
+        'down_line',
+    ];
 
-  protected $hidden = [
-    'id',
-  ];
+    protected $hidden = [
+        'id',
+    ];
 }
