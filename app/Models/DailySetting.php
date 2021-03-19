@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class DailySetting extends Model
 {
-  use HasFactory;
+    use HasFactory;
 
-  protected $fillable = [
-    'switch',
-  ];
+    protected $fillable = [
+        'switch',
+    ];
 
-  protected $hidden = [
-    'id',
-  ];
+    protected $hidden = [
+        'id',
+    ];
 }

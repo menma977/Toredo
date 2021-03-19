@@ -8,17 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class PackageList extends Model
 {
-  use HasFactory, UuidProvider;
+    use HasFactory, UuidProvider;
 
-  protected $keyType = "string";
+    protected $keyType = "string";
 
-  protected $fillable = [
-    'dollar',
-    'doge',
-    'token',
-  ];
+    protected $fillable = [
+        'dollar',
+        'doge',
+        'token',
+    ];
 
-  protected $hidden = [
-    'id',
-  ];
+    protected $hidden = [
+        'id',
+    ];
 }

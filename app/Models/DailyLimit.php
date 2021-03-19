@@ -8,17 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class DailyLimit extends Model
 {
-  use HasFactory, UuidProvider;
+    use HasFactory, UuidProvider;
 
-  protected $keyType = "string";
+    protected $keyType = "string";
 
-  protected $fillable = [
-    'min',
-    'max',
-    'value',
-  ];
+    protected $fillable = [
+        'min',
+        'max',
+        'value',
+    ];
 
-  protected $hidden = [
-    'id',
-  ];
+    protected $hidden = [
+        'id',
+    ];
 }

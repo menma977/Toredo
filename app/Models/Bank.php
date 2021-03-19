@@ -7,16 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bank extends Model
 {
-  use HasFactory;
+    use HasFactory;
 
-  protected $fillable = [
-    'username',
-    'wallet',
-    'cookie',
-  ];
+    protected $fillable = [
+        'username',
+        'wallet',
+        'cookie',
+    ];
 
-  protected $hidden = [
-    'id',
-    'password',
-  ];
+    protected $hidden = [
+        'id',
+        'password',
+    ];
 }

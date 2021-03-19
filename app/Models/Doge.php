@@ -9,27 +9,27 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Doge extends Model
 {
-  use HasFactory, UuidProvider;
+    use HasFactory, UuidProvider;
 
-  protected $keyType = "string";
+    protected $keyType = "string";
 
-  protected $fillable = [
-    'username',
-    'wallet',
-    'cookie',
-  ];
+    protected $fillable = [
+        'username',
+        'wallet',
+        'cookie',
+    ];
 
-  protected $hidden = [
-    'id',
-    'user_id',
-    'password',
-  ];
+    protected $hidden = [
+        'id',
+        'user_id',
+        'password',
+    ];
 
-  /**
-   * @return BelongsTo
-   */
-  public function user(): BelongsTo
-  {
-    return $this->belongsTo(User::class, "user_id", "id");
-  }
+    /**
+     * @return BelongsTo
+     */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, "user_id", "id");
+    }
 }
