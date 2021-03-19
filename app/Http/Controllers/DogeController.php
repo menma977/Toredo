@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Controllers\HttpController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
@@ -116,7 +117,7 @@ class DogeController extends Controller
     }
 
 
-    public function balance($cookie): object
+    public static function balance($cookie): object
     {
         $data = [
             "s" => $cookie,
@@ -127,7 +128,9 @@ class DogeController extends Controller
             return (object)[
                 "code" => $post->code,
                 "message" => $post->message,
-                "data"
+                "data" => [
+                    "Balance" => $post->data->Balance,
+                ],
             ];
         }
     }

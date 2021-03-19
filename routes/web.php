@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BankController;
+use App\Http\Controllers\DashboadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,8 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+Route::middleware('guest')->group(function () {
+    Route::get('/dashboard', [DashboadController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard/show', [DashboadController::class, 'show'])->name('dashboard');
     Route::get('/bank', [BankController::class, 'index'])->name('bank');
 });
 
